@@ -1,0 +1,50 @@
+A ANATOMIA DO SOM — Mapa Sonoro do Spotify
+========================================
+
+SOBRE O TRABALHO
+Neste trabalho, analiso como a popularidade das faixas se relaciona com atributos sonoros, gêneros musicais e presença de conteúdo explícito. Usei o Spotify Tracks Dataset fornecido para explorar padrões na base, sem tratar popularidade como sinônimo de qualidade musical ou os resultados como representativos de toda a música.
+
+O infográfico apresenta cinco análises: distribuição da popularidade, associação entre popularidade e atributos sonoros, comparação entre faixas com e sem conteúdo explícito, médias de popularidade por gênero e relação entre energia e acústica médias dos gêneros. Os textos explicativos foram escritos para orientar a leitura dos gráficos em linguagem comum.
+
+ARQUIVOS
+- a_anatomia_do_som.pdf: infográfico vetorial, uma página A4 horizontal, pronto para impressão.
+- a_anatomia_do_som.png: versão em alta resolução, 300 dpi (3507 x 2481 pixels).
+- a_anatomia_do_som.py: script para reproduzir a análise e gerar o infográfico.
+- a_anatomia_estatisticas.csv: estatísticas e correlações calculadas pelo script.
+- a_anatomia_perfil_generos.csv: indicadores descritivos dos gêneros.
+- spotify-tracks-dataset-detailed.csv: base original utilizada.
+
+COMO EXECUTAR
+1. Instale Python 3.10 ou superior.
+2. Instale as dependências:
+   python -m pip install pandas numpy matplotlib
+3. Deixe o arquivo spotify-tracks-dataset-detailed.csv na mesma pasta do script.
+4. Execute:
+   python a_anatomia_do_som.py
+
+Também é possível indicar caminhos explicitamente:
+   python a_anatomia_do_som.py --csv /caminho/spotify-tracks-dataset-detailed.csv --output-dir /caminho/saida
+
+O script recalcula as estatísticas e exporta o PDF, o PNG e as tabelas CSV.
+
+COMO LER OS GRÁFICOS
+01 — Cauda da popularidade: mostro a porcentagem de faixas em cada intervalo de popularidade; a barra laranja destaca score zero.
+02 — Popularidade e atributos sonoros: comparo oito atributos com a popularidade. Barras à direita indicam associação positiva; à esquerda, negativa. Barras próximas de zero indicam associação fraca.
+03 — Conteúdo explícito: comparo as distribuições dos dois grupos. A linha indica a mediana, e a caixa cobre a metade central dos scores.
+04 — Ranking por gênero: comparo as cinco maiores e as cinco menores médias observadas nesta base. O ranking descreve a amostra, não qualidade musical universal.
+05 — Mapa de identidade sonora: cada ponto representa um gênero; mais à direita significa maior energia e mais acima significa maior acústica. A correlação refere-se às médias por gênero.
+
+CRITÉRIOS DE ANÁLISE
+- A base contém 114.000 registros originais. Removi 450 linhas exatamente duplicadas.
+- Para os resumos gerais, conto cada track_id uma vez. Quando a popularidade diverge entre registros do mesmo ID, uso a mediana.
+- Para comparar gêneros, mantenho cada associação distinta track_id x track_genre; uma mesma faixa pode aparecer em mais de um gênero.
+- Calculo as correlações entre popularidade e atributos sonoros com rho de Spearman por track_id.
+- No mapa sonoro, calculo Pearson entre as médias de energia e acústica dos 114 gêneros.
+- Os resultados descrevem esta base específica. Popularidade é um score da plataforma, não uma medida universal de qualidade musical; correlação não demonstra causalidade.
+
+RESULTADOS PRINCIPAIS DA VERSÃO ENTREGUE
+- 89.741 IDs distintos e 114 gêneros.
+- Mediana de popularidade: 33/100; 10,5% dos IDs têm score zero.
+- Dançabilidade x popularidade: rho de Spearman = +0,0553, associação muito fraca.
+- Energia x acústica entre médias de gênero: r de Pearson = -0,9130.
+- Faixas explícitas e não explícitas têm medianas de popularidade 37 e 33; a diferença observada é pequena (delta de Cliff ≈ +0,10).

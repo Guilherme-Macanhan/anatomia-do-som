@@ -1,0 +1,25 @@
+﻿estatistica,valor,metodo_unidade
+Registros originais,114000.0,linhas do CSV
+Duplicatas exatas removidas,450.0,linhas
+Registros faixa-genero apos limpeza,113550.0,linhas
+IDs unicos,89741.0,track_id distintos
+Generos,114.0,rotulos distintos
+Popularidade media por ID,33.197897282178715,escala 0-100; mediana por ID antes da media geral
+Popularidade mediana por ID,33.0,escala 0-100
+Participacao com popularidade zero,0.10467902073745557,proporcao de IDs
+Duracao mediana,213293.0,milissegundos
+Correlacao energia-acustica entre medias de genero,-0.9130355813522812,Pearson r
+Mediana popularidade - sem explicito,33.0,escala 0-100
+Mediana popularidade - explicito,37.0,escala 0-100
+Cliff delta - explicito vs sem explicito,0.10223618516179744,efeito de ordenacao
+Spearman popularidade x Instrumental,-0.12437980785486312,rho por track_id
+Spearman popularidade x Intensidade sonora,0.06733675715656655,rho por track_id
+Spearman popularidade x Fala,-0.06703900354102071,rho por track_id
+Spearman popularidade x Dancabilidade,0.05534306629894286,rho por track_id
+Spearman popularidade x Energia,-0.01563708165733184,rho por track_id
+Spearman popularidade x Valencia,-0.010702422676452656,rho por track_id
+Spearman popularidade x Acustica,0.010109679745740289,rho por track_id
+Spearman popularidade x Tempo,0.008361843500496182,rho por track_id
+Valores ausentes - artists,1.0,metadado descritivo; nao usado nos graficos
+Valores ausentes - album_name,1.0,metadado descritivo; nao usado nos graficos
+Valores ausentes - track_name,1.0,metadado descritivo; nao usado nos graficos
